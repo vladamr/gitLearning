@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <form class="regForm" action="/user" method="post">
+      <p class="checkIn">Are you new here?</p>
+      <input
+        class="button"
+        type="submit"
+        name="add"
+        value="Check In Now!"
+        id="tab"
+      />
+    </form>
+
+    <form class="regForm" action="/entry" method="post">
+      <p class="checkIn">Or you are already registred?</p>
+      <input
+        class="button"
+        type="submit"
+        name="entry"
+        value="Log In Here"
+        id="tab"
+      />
+    </form>
+
+    <form
+      class="tab-view tab-view-height-auto"
+      action="/rigistredUser"
+      method="post"
+    >
+      <% users.forEach(function(user) { %>
+      <button
+        class="form1"
+        type="submit"
+        name="user"
+        value="<%= user.id %>"
+        id="<%= user.id %>"
+      >
+        <label for="<%= user.id %>" style="background-color: rosybrown"></label>
+        <%= user.name %>
+      </button>
+      <% }); %>
+    </form>
+
+    <h1 class="author_name"><%=name%></h1>
+    <h3 class="author_description"><%=description%></h3>
+    <ul>
+      <li class="author_books"><%=readBooks%></li>
+    </ul>
+  </body>
+</html>
